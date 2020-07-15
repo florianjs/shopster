@@ -1,0 +1,100 @@
+<%- include('partials/header'); %>
+<form
+  action=""
+  method="post"
+  class="text-gray-500 bg-gray-900 body-font relative"
+>
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-col text-center w-full mb-12">
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">
+        List a new product
+      </h1>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+        Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
+        gentrify.
+      </p>
+    </div>
+    <div class="lg:w-1/2 md:w-2/3 mx-auto">
+      <div class="flex flex-wrap -m-2">
+        <div class="p-2 w-1/2">
+          <input
+            class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-indigo-500 text-base px-4 py-2"
+            placeholder="Product Name"
+            type="text"
+            name="product_name"
+          />
+        </div>
+        <div class="p-2 w-1/2">
+          <input
+            class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-indigo-500 text-base px-4 py-2"
+            placeholder="Price"
+            type="number"
+            step="0.01"
+            name="product_price"
+          />
+        </div>
+        <div class="p-2 w-1/2">
+          <input
+            class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-indigo-500 text-base px-4 py-2"
+            placeholder="URL"
+            type="url"
+            name="product_url"
+          />
+        </div>
+        <div class="p-2 w-1/2">
+          <input
+            class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-indigo-500 text-base px-4 py-2"
+            placeholder="Image URL"
+            type="url"
+            name="product_img"
+          />
+        </div>
+        <div class="p-2 w-1/2">
+          <input
+            class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-indigo-500 text-base px-4 py-2"
+            placeholder="Category"
+            type="text"
+            name="product_category"
+          />
+        </div>
+
+        <div class="p-2 w-1/2">
+          <select
+            class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-indigo-500 text-base px-4 py-2"
+            name="available"
+            id=""
+          >
+            <option value="on">Available</option>
+            <option value="">Not Available</option>
+          </select>
+        </div>
+
+        <!-- <div class="p-2 w-1/2">
+          <input
+            class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-indigo-500 text-base px-4 py-2"
+            placeholder="Available?"
+            type="checkbox"
+            name="available"
+          /><label for="available">Available ?</label>
+        </div> -->
+
+        <div class="p-2 w-full">
+          <textarea
+            class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none h-48 focus:border-indigo-500 text-base px-4 py-2 resize-none block"
+            placeholder="Details"
+            name="product_details"
+          ></textarea>
+        </div>
+        <div class="p-2 w-full">
+          <button
+            type="submit"
+            class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+          >
+            ADD
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+<%- include('partials/footer'); %>

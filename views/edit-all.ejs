@@ -1,0 +1,51 @@
+<%- include('partials/header'); %>
+<body>
+  <section class="text-gray-500 bg-gray-900 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-wrap -m-4">
+        <% for (var prop in products ) { %>
+
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+          <a class="block relative h-48 rounded overflow-hidden">
+            <% if(products[prop].product_img) { %>
+            <img
+              alt="ecommerce"
+              class="object-cover object-center w-full h-full block"
+              src="<%= products[prop].product_img %>"
+            />
+            <% } else { %>
+            <img
+              alt="ecommerce"
+              class="object-cover object-center w-full h-full block"
+              src="https://dummyimage.com/600x400/000/ffffff"
+            />
+            <% } %>
+          </a>
+          <div class="mt-4">
+            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+              <%= products[prop].product_category %>
+            </h3>
+            <h2 class="text-white title-font text-lg font-medium">
+              <%= products[prop].product_name %>
+            </h2>
+            <p class="mt-1">$<%= products[prop].product_price %></p>
+            <p class="mt-1 mb-4">
+              <%=products[prop].product_details.substring(0, 150); %> <% if
+              (products[prop].product_details.length > 150) { %> [...] <% } %>
+            </p>
+
+            <div class="flex justify-end">
+              <a
+                href="/products/<%= prop %>"
+                class="bg-gray-200 text-gray-900 py-2 px-4 rounded-md hover:bg-gray-800 hover:text-white"
+                >EDIT</a
+              >
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </section>
+  <%- include('partials/footer'); %>
+</body>

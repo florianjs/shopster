@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>HipsterShop</title>
+  </head>
+
+  <header class="text-gray-500 bg-gray-900 body-font">
+    <div
+      class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
+    >
+      <a
+        class="flex title-font font-medium items-center text-white mb-4 md:mb-0"
+      >
+        <img
+          src="https://svgsilh.com/svg/2023997.svg"
+          class="w-10 h-10 text-white p-2 bg-white rounded-full"
+          alt=""
+        />
+        <span class="ml-3 text-xl">Shopster</span>
+      </a>
+      <nav
+        class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-700 flex flex-wrap items-center text-base justify-center"
+      >
+        <a href="/" class="mr-5 hover:text-white">Home</a>
+        <% if(authenticate) { %>
+
+        <a href="/products/add" class="mr-5 hover:text-white">Add Product</a>
+        <a href="/products/edit" class="mr-5 hover:text-white">Edit products</a>
+        <% } %>
+      </nav>
+      <a
+        href="/users/login"
+        class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0"
+      >
+        Login
+        <svg
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          class="w-4 h-4 ml-1"
+          viewBox="0 0 24 24"
+        >
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
+        </svg>
+      </a>
+    </div>
+  </header>
+</html>
