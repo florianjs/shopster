@@ -1,3 +1,5 @@
+![Shopster Admin Demo](ShopsterAdmin.gif)
+
 # Shopster V1.0.0
 
 Shopster let you create your own product affiliate website like https://www.thisiswhyimbroke.com/
@@ -73,3 +75,6 @@ app.listen(process.env.PORT, () => {
   console.log("Server listening on port 3000");
 });
 ```
+
+in your package.json file,
+Change "start": **"nodemon server.js"** with **"start": "node server.js"**
