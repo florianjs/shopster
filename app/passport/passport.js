@@ -38,5 +38,5 @@ passport.deserializeUser(function (id, cb) {
 });
 
 module.exports.auth = passport.authenticate("local", {
-  failureRedirect: "/login"
+  failureRedirect: "/users/login"
 });
