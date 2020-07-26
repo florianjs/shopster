@@ -6,7 +6,7 @@ const ProductRoute = require("./app/routes/productRoute");
 const UsersRoute = require("./app/routes/userRoute");
 const bodyParser = require("body-parser");
 const passport = require("passport");
-const Strategy = require("passport-local").Strategy;
+// const Strategy = require("passport-local").Strategy;
 const UserController = require("./controllers/UserController");
 
 const app = express();
@@ -16,7 +16,7 @@ app.use(
   require("express-session")({
     secret: process.env.SESSION_SECRET,
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
   })
 );
 
@@ -30,14 +30,27 @@ app.use("/products", ProductRoute);
 
 app.use("/users", UsersRoute);
 
+/**
+ *  Delete these lines once admin created
+ */
 app.get("/install", UserController.registerPage);
 app.post("/install", UserController.register);
+/********************************************/
 
 /* 404 */
 app.get("*", (req, res) => {
-  res.status(404).send("Not Found");
+  res.status(404).render("404", { authenticate: req.isAuthenticated() });
 });
 
 app.listen(3000, () => {
   console.log("Server listening on port 3000");
 });
+
+/**
+ *  On Glitch use:
+ 
+ app.listen(process.env.PORT, () => {
+  console.log("Server listening on port 3000");
+});
+
+ */

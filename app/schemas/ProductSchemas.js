@@ -7,26 +7,29 @@ const Schema = mongoose.Schema;
 const createProductSchema = new Schema(
   {
     product_name: {
-      type: String
+      type: String,
     },
     product_price: {
-      type: Number
+      type: Number,
     },
     product_url: {
-      type: String
+      type: String,
     },
     product_img: {
-      type: String
+      type: String,
     },
     product_details: {
-      type: String
+      type: String,
     },
     available: {
-      type: String
+      type: String,
     },
     product_category: {
-      type: String
-    }
+      type: String,
+    },
+    product_id: {
+      type: String,
+    },
   },
   { collection: "products" }
 );
