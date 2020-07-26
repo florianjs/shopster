@@ -34,6 +34,16 @@ exports.getProducts = (req, res) => {
   });
 };
 
+exports.getProduct = (req, res) => {
+  Product.fetchSingle({ product_id: req.params.id }, (product) => {
+    // console.log(products);
+    res.render("product", {
+      product: product,
+      authenticate: req.isAuthenticated(),
+    });
+  });
+};
+
 exports.edit = (req, res) => {
   if (req.isAuthenticated()) {
     const id = req.params.id;

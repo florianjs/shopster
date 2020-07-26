@@ -1,59 +1,50 @@
 <%- include('partials/header'); %>
-<body>
-  <section class="text-gray-500 bg-gray-900 body-font">
-    <div class="container px-5 py-24 mx-auto">
-      <div class="flex flex-wrap -m-4">
-        <% for (var prop in products ) { %>
+<section class="text-gray-500 bg-gray-900 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-wrap -m-4">
+      <% for (var prop in products ) { %>
 
-        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-          <a class="block relative h-48 rounded overflow-hidden">
-            <% if(products[prop].product_img) { %>
-            <img
-              alt="ecommerce"
-              class="object-cover object-center w-full h-full block"
-              src="<%= products[prop].product_img %>"
-            />
-            <% } else { %>
-            <img
-              alt="ecommerce"
-              class="object-cover object-center w-full h-full block"
-              src="https://dummyimage.com/600x400/000/ffffff"
-            />
-            <% } %>
-          </a>
-          <div class="mt-4">
-            <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
-              <%= products[prop].product_category %>
-            </h3>
-            <!-- <a
-              href=" <%= products[prop].product_url %>"
-              target="_blank"
-              class="flex justify-between items-center mb-2"
-            > -->
-
-            <a
-              href=" products/<%= products[prop].product_id %>"
-              target="_blank"
-              class="flex justify-between items-center mb-2"
+      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+        <a class="block relative h-48 rounded overflow-hidden">
+          <% if(products[prop].product_img) { %>
+          <img
+            alt="ecommerce"
+            class="object-cover object-center w-full h-full block"
+            src="<%= products[prop].product_img %>"
+          />
+          <% } else { %>
+          <img
+            alt="ecommerce"
+            class="object-cover object-center w-full h-full block"
+            src="https://dummyimage.com/600x400/000/ffffff"
+          />
+          <% } %>
+        </a>
+        <div class="mt-4">
+          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">
+            <%= products[prop].product_category %>
+          </h3>
+          <a
+            href=" products/details/<%= products[prop].product_id %>"
+            target="_blank"
+            class="flex justify-between items-center mb-2"
+          >
+            <h2
+              class="text-white transform ease-in-out duration-150 text-lg font-medium hover:text-gray-600"
             >
-              <h2
-                class="text-white transform ease-in-out duration-150 text-lg font-medium hover:text-gray-600"
-              >
-                <%= products[prop].product_name %>
-              </h2>
-              <p class="text-xl font-light self-start">
-                $<%= products[prop].product_price %>
-              </p>
-            </a>
-
-            <p class="mt-1 text-justify">
-              <%= products[prop].product_details %>
+              <%= products[prop].product_name %>
+            </h2>
+            <p class="text-xl font-light self-start">
+              $<%= products[prop].product_price %>
             </p>
-          </div>
+          </a>
+          <p class="mt-1 text-justify">
+            <%= products[prop].product_details %>
+          </p>
         </div>
-        <% } %>
       </div>
+      <% } %>
     </div>
-  </section>
-  <%- include('partials/footer'); %>
-</body>
+  </div>
+</section>
+<%- include('partials/footer'); %>

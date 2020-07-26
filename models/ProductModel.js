@@ -41,6 +41,15 @@ const fetchProductCallback = (product, id) => {
   });
 };
 
+const fetchUrlCallback = (product, url) => {
+  products.findOne(url, (err, result) => {
+    if (err) {
+      console.log(err);
+    }
+    product(result);
+  });
+};
+
 module.exports = class Product {
   constructor(p) {
     this.product = p;
@@ -66,6 +75,9 @@ module.exports = class Product {
   }
   static fetch(id, cb) {
     fetchProductCallback(cb, id);
+  }
+  static fetchSingle(url, cb) {
+    fetchUrlCallback(cb, url);
   }
   update(id) {
     products.updateOne({ _id: id }, this.product_schema, ProductCallback);
