@@ -60,6 +60,7 @@ module.exports = class Product {
       product_url: this.product.product_url,
       product_img: this.product.product_img,
       product_details: this.product.product_details,
+      product_short_details: this.product.product_short_details,
       available: this.product.available,
       product_category: this.product.product_category,
       product_id: this.product.product_name.replace(/\s/g, "_"),

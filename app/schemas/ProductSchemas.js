@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 //Define a schema
 const Schema = mongoose.Schema;
 
+//TODO Add sizes & colors
+
 const createProductSchema = new Schema(
   {
     product_name: {
@@ -19,6 +21,9 @@ const createProductSchema = new Schema(
       type: String,
     },
     product_details: {
+      type: String,
+    },
+    product_short_details: {
       type: String,
     },
     available: {
