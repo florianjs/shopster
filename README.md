@@ -38,7 +38,7 @@ DB_URL=YourDbURL
 SESSION_SECRET=SuperLongSecretForSession
 ```
 
-If you don't know how to create a Mongo database, you can use Atlas. Check this tutorial for more details https://www.youtube.com/watch?v=KKyag6t98g8
+If you don't know how to create a Mongo database, you can use Atlas. Check this tutorial for more details https://dev.to/icesofty/setup-robo3t-with-atlas-a-step-by-step-guide-2hoc
 
 ## 2 - Create a new User
 
