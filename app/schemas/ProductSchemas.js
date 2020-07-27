@@ -1,32 +1,49 @@
 //Require Mongoose
+
 const mongoose = require("mongoose");
 
 //Define a schema
 const Schema = mongoose.Schema;
 
+//TODO Add sizes & colors
+
 const createProductSchema = new Schema(
   {
     product_name: {
-      type: String
+      type: String,
     },
     product_price: {
-      type: Number
+      type: Number,
     },
     product_url: {
-      type: String
+      type: String,
     },
     product_img: {
-      type: String
+      type: String,
     },
     product_details: {
-      type: String
+      type: String,
+    },
+    product_short_details: {
+      type: String,
     },
     available: {
-      type: String
+      type: String,
     },
     product_category: {
-      type: String
-    }
+      type: String,
+    },
+    product_id: {
+      type: String,
+    },
+    product_sizes: {
+      default: [],
+      type: Object,
+    },
+    product_colors: {
+      default: [],
+      type: Array,
+    },
   },
   { collection: "products" }
 );

@@ -24,6 +24,7 @@
             name="product_name"
           />
         </div>
+
         <div class="p-2 w-1/2">
           <input
             class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-indigo-500 text-base px-4 py-2"
@@ -69,6 +70,23 @@
           </select>
         </div>
 
+        <div class="p-2 w-1/2">
+          <input
+            class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-indigo-500 text-base px-4 py-2"
+            placeholder="Colors in Hex format (comma separated, ex: #fff, #000)"
+            type="text"
+            name="product_colors"
+          />
+        </div>
+        <div class="p-2 w-1/2">
+          <input
+            class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-indigo-500 text-base px-4 py-2"
+            placeholder="Sizes (comma separated)"
+            type="text"
+            name="product_sizes"
+          />
+        </div>
+
         <!-- <div class="p-2 w-1/2">
           <input
             class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none focus:border-indigo-500 text-base px-4 py-2"
@@ -80,8 +98,15 @@
 
         <div class="p-2 w-full">
           <textarea
+            class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none h-16 focus:border-indigo-500 text-base px-4 py-2 resize-none block"
+            placeholder="Short Description"
+            name="product_short_details"
+          ></textarea>
+        </div>
+        <div class="p-2 w-full">
+          <textarea
             class="w-full bg-gray-800 rounded border border-gray-700 text-white focus:outline-none h-48 focus:border-indigo-500 text-base px-4 py-2 resize-none block"
-            placeholder="Details"
+            placeholder="Description"
             name="product_details"
           ></textarea>
         </div>

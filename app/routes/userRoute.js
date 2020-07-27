@@ -12,4 +12,12 @@ router
     res.redirect("/");
   });
 
+router.route("/dashboard").get((req, res) => {
+  if (req.isAuthenticated()) {
+    res.render("dashboard", { authenticate: req.isAuthenticated() });
+  } else {
+    res.status(404).render("404", { authenticate: req.isAuthenticated() });
+  }
+});
+
 module.exports = router;

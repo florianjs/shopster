@@ -10,7 +10,7 @@ exports.add = (req, res) => {
       res.send("Error");
     }
   } else {
-    res.redirect("/");
+    res.status(404).render("404", { authenticate: req.isAuthenticated() });
   }
 };
 
@@ -18,7 +18,7 @@ exports.getAdd = (req, res) => {
   if (req.isAuthenticated()) {
     res.render("add-product", { authenticate: req.isAuthenticated() });
   } else {
-    res.redirect("/");
+    res.status(404).render("404", { authenticate: req.isAuthenticated() });
   }
 };
 
@@ -29,7 +29,17 @@ exports.getProducts = (req, res) => {
     // console.log(products);
     res.render("homepage", {
       products: products,
-      authenticate: req.isAuthenticated()
+      authenticate: req.isAuthenticated(),
+    });
+  });
+};
+
+exports.getProduct = (req, res) => {
+  Product.fetchSingle({ product_id: req.params.id }, (product) => {
+    // console.log(products);
+    res.render("product", {
+      product: product,
+      authenticate: req.isAuthenticated(),
     });
   });
 };
@@ -40,11 +50,11 @@ exports.edit = (req, res) => {
     Product.fetch(id, (product) => {
       res.render("edit-product", {
         product: product,
-        authenticate: req.isAuthenticated()
+        authenticate: req.isAuthenticated(),
       });
     });
   } else {
-    res.redirect("/");
+    res.status(404).render("404", { authenticate: req.isAuthenticated() });
   }
 };
 
@@ -55,11 +65,11 @@ exports.editAll = (req, res) => {
       // console.log(products);
       res.render("edit-all", {
         products: products,
-        authenticate: req.isAuthenticated()
+        authenticate: req.isAuthenticated(),
       });
     });
   } else {
-    res.redirect("/");
+    res.status(404).render("404", { authenticate: req.isAuthenticated() });
   }
 };
 
@@ -74,7 +84,7 @@ exports.update = (req, res) => {
       res.send("Error");
     }
   } else {
-    res.redirect("/");
+    res.status(404).render("404", { authenticate: req.isAuthenticated() });
   }
 };
 
@@ -85,6 +95,6 @@ exports.delete = (req, res) => {
     Product.delete(id);
     res.redirect("/products/edit");
   } else {
-    res.redirect("/");
+    res.status(404).render("404", { authenticate: req.isAuthenticated() });
   }
 };

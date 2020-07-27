@@ -3,7 +3,7 @@ const products = require("../app/schemas/ProductSchemas");
 
 mongoose.connect(process.env.DB_URL, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
 });
 
 const db = mongoose.connection;
@@ -41,13 +41,36 @@ const fetchProductCallback = (product, id) => {
   });
 };
 
+const fetchUrlCallback = (product, url) => {
+  products.findOne(url, (err, result) => {
+    if (err) {
+      console.log(err);
+    }
+    product(result);
+  });
+};
+
 module.exports = class Product {
   constructor(p) {
     this.product = p;
+
+    this.product_schema = {
+      product_name: this.product.product_name,
+      product_price: this.product.product_price,
+      product_url: this.product.product_url,
+      product_img: this.product.product_img,
+      product_details: this.product.product_details,
+      product_short_details: this.product.product_short_details,
+      available: this.product.available,
+      product_category: this.product.product_category,
+      product_id: this.product.product_name.replace(/\s/g, "_"),
+      product_colors: this.product.product_colors.split(","),
+      product_sizes: this.product.product_sizes.split(","),
+    };
   }
 
   create() {
-    products.insertMany(this.product, ProductCallback);
+    products.insertMany(this.product_schema, ProductCallback);
     return ProductCallback;
   }
   static fetchAll(condition, cb) {
@@ -56,8 +79,11 @@ module.exports = class Product {
   static fetch(id, cb) {
     fetchProductCallback(cb, id);
   }
+  static fetchSingle(url, cb) {
+    fetchUrlCallback(cb, url);
+  }
   update(id) {
-    products.updateOne({ _id: id }, this.product, ProductCallback);
+    products.updateOne({ _id: id }, this.product_schema, ProductCallback);
     return ProductCallback;
   }
   static delete(id) {
