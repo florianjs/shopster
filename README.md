@@ -1,6 +1,6 @@
 ![Shopster Admin Demo](ShopsterAdmin.gif)
 
-# Shopster V1.0.0
+# Shopster V1.0.2
 
 Shopster let you create your own product affiliate website like https://www.thisiswhyimbroke.com/
 
@@ -78,3 +78,11 @@ app.listen(process.env.PORT, () => {
 
 in your package.json file,
 Change "start": **"nodemon server.js"** with **"start": "node server.js"**
+
+# CHangelog
+
+## V1.0.2 
+- Single page added for each product
+- You can now add sizes & colors for your product
+- Refactoring for the EJS views
+- Minor improvements
