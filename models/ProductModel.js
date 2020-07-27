@@ -64,6 +64,8 @@ module.exports = class Product {
       available: this.product.available,
       product_category: this.product.product_category,
       product_id: this.product.product_name.replace(/\s/g, "_"),
+      product_colors: this.product.product_colors.split(","),
+      product_sizes: this.product.product_sizes.split(","),
     };
   }
 

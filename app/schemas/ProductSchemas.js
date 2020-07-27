@@ -1,4 +1,5 @@
 //Require Mongoose
+
 const mongoose = require("mongoose");
 
 //Define a schema
@@ -34,6 +35,14 @@ const createProductSchema = new Schema(
     },
     product_id: {
       type: String,
+    },
+    product_sizes: {
+      default: [],
+      type: Object,
+    },
+    product_colors: {
+      default: [],
+      type: Array,
     },
   },
   { collection: "products" }
