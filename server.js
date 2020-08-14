@@ -16,7 +16,7 @@ app.use(
   require("express-session")({
     secret: process.env.SESSION_SECRET,
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: false
   })
 );
 
@@ -42,8 +42,8 @@ app.get("*", (req, res) => {
   res.status(404).render("404", { authenticate: req.isAuthenticated() });
 });
 
-app.listen(3000, () => {
-  console.log("Server listening on port 3000");
+app.listen(8080, () => {
+  console.log("Server listening on port 8080");
 });
 
 /**
