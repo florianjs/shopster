@@ -42,8 +42,8 @@ app.get("*", (req, res) => {
   res.status(404).render("404", { authenticate: req.isAuthenticated() });
 });
 
-app.listen(8080, () => {
-  console.log("Server listening on port 8080");
+app.listen(80, () => {
+  console.log("Server listening on port 80");
 });
 
 /**
