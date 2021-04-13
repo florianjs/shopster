@@ -1,3 +1,7 @@
+# ⚠️ This project is deprecated. Use https://github.com/Icesofty/Boutique instead
+
+
+
 ![Shopster Admin Demo](ShopsterAdmin.gif)
 
 # Shopster V1.0.2
